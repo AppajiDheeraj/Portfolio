@@ -33,6 +33,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'gtek';
+  src: url('./assets/fonts/GtekTechnology-B9aB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @tailwind base;
 @tailwind components;

@@ -23,7 +23,7 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center mt-6 md:mt-auto">
-                <div className="h-8 w-8 rounded-full bg-white text-black flex items-center justify-center text-xs font-bold mr-2">
+                <div className="h-8 w-8 rounded-full bg-[#b7ab98] text-black flex items-center justify-center text-lg font-highrise mr-1">
                   AD
                 </div>
                 <p className="text-sm text-[#b7ab98]">

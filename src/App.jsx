@@ -5,7 +5,6 @@ import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import AboutMe from './components/AboutMe.jsx'
 import Motto from './components/Motto.jsx'
-import FooterTry from './components/FooterTry.jsx'
 
 function App() {
 

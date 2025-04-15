@@ -9,6 +9,7 @@ export default {
         avant2: ['avant2'],
         avant3: ['avant3'],
         highrise:['highrise'],
+        gtek: ['gtek'],
       },
     },
   },
