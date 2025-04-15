@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  max-width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0; /* Remove the 2rem padding */
+  text-align: center;
+}
