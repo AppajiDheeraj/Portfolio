@@ -33,8 +33,8 @@ const Footer = () => {
             </div>
             
             {/* Right section */}
-            <div className="flex flex-col justify-between md:w-1/3 mt-8 md:mt-0">
-              <div className="flex space-x-6 md:space-x-8 mb-8 mr-1">
+            <div className="flex flex-col justify-around md:w-1/3 mt-4 md:mt-0">
+              <div className="flex justify-end items-center space-x-6 md:space-x-8 mr-1  ">
                 <a href="#" className="flex items-center text-[#b7ab98] hover:text-purple-400 transition-colors">
                   INSTAGRAM <ArrowUpRight className="ml-1 h-4 w-4" />
                 </a>
@@ -46,21 +46,21 @@ const Footer = () => {
                 </a>
               </div>
 
-              <div className="flex flex-col space-y-4">
-                <div className="border-t border-[#b7ab98] border-opacity-60 pt-4">
+              <div className="flex flex-col space-y-0">
+                <div className="border-t border-[#b7ab98] border-opacity-60 pt-2 pb-2">
                   <div className="flex justify-between items-center">
                     <span className="text-[#b7ab98] italic w-20 font-whitenice text-2xl">email</span>
-                    <a href="mailto:dheeraj.nagaraja@gmail.com" className="text-[#b7ab98] hover:text-purple-400 transition-colors">
+                    <a href="mailto:dheeraj.nagaraja@gmail.com" className="text-[#b7ab98] hover:text-purple-400 transition-colors font-avant1 tracking-wide">
                       dheeraj.nagaraja@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="border-y border-[#b7ab98] border-opacity-60 pt-4 pb-4">
+                <div className="border-y border-[#b7ab98] border-opacity-60 pt-2 pb-2">
                   <div className="flex justify-between items-center">
                     <span className="text-[#b7ab98] italic w-20 font-whitenice text-2xl">contact</span>
-                    <a href="tel:+919481660290" className="text-[#b7ab98] hover:text-purple-400 transition-colors">
-                      +91-9481660290
+                    <a href="tel:+919481660290" className="text-[#b7ab98] hover:text-purple-400 transition-colors font-avant1">
+                      +91-94816{" "}60290
                     </a>
                   </div>
                 </div>
