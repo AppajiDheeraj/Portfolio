@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black flex flex-col">
-      <Logo />
+      {/* <Logo /> */}
       <Hero />
       <Navbar />
       <section id="about" className="pt-20">

@@ -7,7 +7,6 @@ const inactiveTitles = [
   "💔 tab’s lonely",
   "😢 I miss you",
   "👀 Are you still there?",
-  "😐 I’m still here",
   "😞 Waiting for you",
 ];
 

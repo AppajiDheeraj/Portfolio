@@ -33,20 +33,27 @@ const Footer = () => {
             </div>
             
             {/* Right section */}
-            <div className="flex flex-col justify-around md:w-1/3 mt-4 md:mt-0">
-              <div className="flex justify-end items-center space-x-6 md:space-x-8 mr-1  ">
-                <a href="#" className="flex items-center text-[#b7ab98] hover:text-purple-400 transition-colors">
-                  INSTAGRAM <ArrowUpRight className="ml-1 h-4 w-4" />
+            <div className="flex flex-col justify-around font-avant1 tracking-wider mb-4 md:w-1/3 mt-4 md:mt-0">
+              <div className="flex justify-end items-center space-x-6 md:space-x-12 mr-1">
+                <a href="#" className="group flex items-center text-[#b7ab98] hover:text-black hover:bg-[#eb5939] transition-all px-2 py-1 rounded-md ">
+                  <span className="group-hover:hidden">Instagram</span>
+                  <span className="hidden text-xs tracking-normal text-left group-hover:inline">Here by chance <br /> or by choice?</span>
+                  <ArrowUpRight className="ml-2 h-4 w-4" />
                 </a>
-                <a href="#" className="flex items-center text-[#b7ab98] hover:text-purple-400 transition-colors">
-                  GITHUB <ArrowUpRight className="ml-1 h-4 w-4" />
+                <a href="#" className="group flex items-center text-[#b7ab98] hover:text-black hover:bg-[#eb5939] transition-all px-1 py-1 rounded-md ">
+                  <span className="group-hover:hidden">Github</span>
+                  <span className="hidden text-xs tracking-normal text-left group-hover:inline">Where my code <br /> meets its destiny</span>
+                  <ArrowUpRight className="ml-2 h-4 w-4" />
                 </a>
-                <a href="#" className="flex items-center text-[#b7ab98] hover:text-purple-400 transition-colors">
-                  LINKEDIN <ArrowUpRight className="ml-1 h-4 w-4" />
+                <a href="#" className="group flex items-center text-[#b7ab98] hover:text-black hover:bg-[#eb5939] transition-all px-2 py-1 rounded-md ">
+                  <span className="group-hover:hidden">LINKEDIN</span>
+                  <span className="hidden text-xs tracking-normal text-left group-hover:inline">Stalking me is fine,<br /> I do it too.</span>
+                  <ArrowUpRight className="ml-2 h-4 w-4" />
                 </a>
               </div>
 
-              <div className="flex flex-col space-y-0">
+              <div className="flex flex-col space-y-0 mt-8">
+
                 <div className="border-t border-[#b7ab98] border-opacity-60 pt-2 pb-2">
                   <div className="flex justify-between items-center">
                     <span className="text-[#b7ab98] italic w-20 font-whitenice text-2xl">email</span>
@@ -66,6 +73,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+
           </div>
 
         </div>

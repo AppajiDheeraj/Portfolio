@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState } from "react"
@@ -10,7 +11,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="absolute top-0 right-0 p-6 md:p-16 z-10">
+    <nav className="absolute top-0 right-0 p-6 md:p-10 z-10">
       {/* Mobile menu button */}
       <button className="md:hidden text-white p-2" onClick={toggleMenu}>
         <svg
@@ -54,7 +55,7 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+        <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl text-[#b7ab98] font-avant1 tracking-wide ">
           <a href="#about" className="hover:text-gray-400 transition-colors">
             ABOUT
           </a>
@@ -68,19 +69,19 @@ const Navbar = () => {
       </div>
 
       {/* Desktop menu */}
-      <ul className="hidden md:flex flex-col space-y-2 text-right">
+      <ul className="hidden md:flex flex-col space-y-2 text-right text-[#b7ab98] font-avant1 tracking-[4px]">
         <li>
-          <a href="#about" className="hover:text-gray-400 transition-colors">
+          <a href="#about" className="hover:opacity-80 transition-opacity duration-300">
             ABOUT
           </a>
         </li>
         <li>
-          <a href="#skills" className="hover:text-gray-400 transition-colors">
+          <a href="#skills" className="hover:opacity-80 transition-opacity duration-300">
             SKILLS
           </a>
         </li>
         <li>
-          <a href="#work" className="hover:text-gray-400 transition-colors">
+          <a href="#work" className="hover:opacity-80 transition-opacity duration-300">
             WORK
           </a>
         </li>
