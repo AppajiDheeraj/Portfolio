@@ -1,7 +1,13 @@
-
 "use client"
 
 import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+
+const menuItems = [
+  { label: "ABOUT", href: "#about" },
+  { label: "SKILLS", href: "#skills" },
+  { label: "WORK", href: "#work" },
+]
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -11,9 +17,9 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="absolute top-0 right-0 p-6 md:p-10 z-10">
+    <nav className="fixed top-0 right-0 p-6 md:p-10 z-10">
       {/* Mobile menu button */}
-      <button className="md:hidden text-white p-2" onClick={toggleMenu}>
+      <button aria-label="Open menu" className="md:hidden text-white p-2" onClick={toggleMenu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -32,60 +38,69 @@ const Navbar = () => {
         </svg>
       </button>
 
-      {/* Mobile menu */}
-      <div
-        className={`md:hidden fixed inset-0 bg-black z-50 transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
-      >
-        <div className="flex justify-end p-6">
-          <button onClick={toggleMenu} className="text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-6 h-6"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-        <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl text-[#b7ab98] font-avant1 tracking-wide ">
-          <a href="#about" className="hover:text-gray-400 transition-colors">
-            ABOUT
-          </a>
-          <a href="#skills" className="hover:text-gray-400 transition-colors">
-            SKILLS
-          </a>
-          <a href="#work" className="hover:text-gray-400 transition-colors">
-            WORK
-          </a>
-        </div>
-      </div>
+      {/* Mobile menu with Framer Motion */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="md:hidden fixed inset-0 bg-black z-50"
+          >
+            <div className="flex justify-end p-6">
+              <button aria-label="Close menu" onClick={toggleMenu} className="text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-6 h-6"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl text-[#b7ab98] font-avant1 tracking-wide">
+              {menuItems.map((item, index) => (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  className="hover:text-gray-400 transition-colors"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * index }}
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Desktop menu */}
-      <ul className="hidden md:flex flex-col space-y-2 text-right text-[#b7ab98] font-avant1 tracking-[4px]">
-        <li>
-          <a href="#about" className="hover:opacity-80 transition-opacity duration-300">
-            ABOUT
-          </a>
-        </li>
-        <li>
-          <a href="#skills" className="hover:opacity-80 transition-opacity duration-300">
-            SKILLS
-          </a>
-        </li>
-        <li>
-          <a href="#work" className="hover:opacity-80 transition-opacity duration-300">
-            WORK
-          </a>
-        </li>
-      </ul>
+      {/* Desktop menu with subtle animation */}
+      <motion.ul
+        className="hidden md:flex flex-col space-y-2 text-right text-[#b7ab98] font-avant1 tracking-[4px]"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        {menuItems.map((item) => (
+          <li key={item.label}>
+            <a href={item.href} className="hover:opacity-80 transition-opacity duration-300">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </motion.ul>
     </nav>
   )
 }
